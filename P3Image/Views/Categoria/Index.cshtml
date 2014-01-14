@@ -1,0 +1,78 @@
+﻿@model P3Image.Presentation.Models.SubCategoria
+@using P3Image.Presentation.Helpers
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/Layout/js/jquery.min.js"></script>
+<script src="~/Scripts/Libraries/knockout-2.1.0.js"></script>
+<script src="~/Scripts/Libraries/knockout.mapping-latest.js"></script>
+
+<section id="content">
+    <section class="vbox">
+        <header class="header bg-dark bg-gradient">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#basic" data-toggle="tab">Categorias</a></li>
+            </ul>
+        </header>
+
+        <section class="scrollable wrapper">
+            <div class="tab-content" >
+                <section class="tab-pane active">
+                    <section class="panel">
+                        <header class="panel-heading font-bold">
+                            Sub Categoria: <span data-bind="text: Descricao"></span>
+                        </header>
+                        <div class="panel-body">
+                            <form class="form-horizontal" method="get">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Nome Sub Categoria</label>
+                                    <div class="col-sm-10">
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" placeholder="Nome da Sub Categoria" data-bind="value: Descricao">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="line line-dashed line-lg pull-in"></div>
+
+                            <form  class="form-horizontal" method="get" data-bind="foreach: Campos">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-10">
+                                        <div class="col-md-4">
+                                            <!-- ko if: TipoId() == 1 -->
+                                                <input type="text" class="form-control" placeholder="Descricao do campo" data-bind="value: Descricao">
+                                            <!-- /ko -->
+                                            <!-- ko if: TipoId() == 2 -->
+                                                <div class="checkbox">
+                                                  <label>
+                                                    <input type="checkbox" value="">
+                                                    <span data-bind="text: Descricao"></span>
+                                                  </label>
+                                                </div>
+                                            <!-- /ko -->
+                                            <!-- ko if: TipoId() == 3 -->
+                                                <select class="form-control m-b" data-bind="foreach: Valores">
+                                                    <option value="1" data-bind="text: Valor"></option>
+                                                </select>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </section>
+    </section>
+</section>
+
+<script>
+    var _subCategoriaModel = ko.mapping.fromJS(@Html.Raw(Model.ToJson()));
+    ko.applyBindings(_subCategoriaModel);
+</script>

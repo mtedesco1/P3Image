@@ -1,0 +1,18 @@
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.Business\bin\Debug\P3Image.Business.dll
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.Business\bin\Debug\P3Image.Business.pdb
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.Business\bin\Debug\P3Image.DataAcces.dll
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.Business\bin\Debug\EntityFramework.dll
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.Business\bin\Debug\P3Image.DataAcces.pdb
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.Business\bin\Debug\EntityFramework.xml
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.Business\obj\Debug\P3Image.Business.csprojResolveAssemblyReference.cache
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.Business\obj\Debug\P3Image.Business.dll
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.Business\obj\Debug\P3Image.Business.pdb
+C:\Users\Alpiste\Desktop\P3Image\P3Image.Business\obj\Debug\P3Image.Business.csprojResolveAssemblyReference.cache
+C:\Users\Alpiste\Desktop\P3Image\P3Image.Business\bin\Debug\P3Image.Business.dll
+C:\Users\Alpiste\Desktop\P3Image\P3Image.Business\bin\Debug\P3Image.Business.pdb
+C:\Users\Alpiste\Desktop\P3Image\P3Image.Business\bin\Debug\P3Image.DataAcces.dll
+C:\Users\Alpiste\Desktop\P3Image\P3Image.Business\bin\Debug\EntityFramework.dll
+C:\Users\Alpiste\Desktop\P3Image\P3Image.Business\bin\Debug\P3Image.DataAcces.pdb
+C:\Users\Alpiste\Desktop\P3Image\P3Image.Business\bin\Debug\EntityFramework.xml
+C:\Users\Alpiste\Desktop\P3Image\P3Image.Business\obj\Debug\P3Image.Business.dll
+C:\Users\Alpiste\Desktop\P3Image\P3Image.Business\obj\Debug\P3Image.Business.pdb

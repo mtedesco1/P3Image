@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="P3ImageDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="P3ImageDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="C__RefactorLog" EntityType="P3ImageDBModel.C__RefactorLog" />
+    <EntitySet Name="sysdiagrams" EntityType="P3ImageDBModel.sysdiagram" />
+    <EntitySet Name="TipoCampoes" EntityType="P3ImageDBModel.TipoCampo" />
+    <EntitySet Name="Categorias" EntityType="P3ImageDBModel.Categoria" />
+    <EntitySet Name="SubCategorias" EntityType="P3ImageDBModel.SubCategoria" />
+    <AssociationSet Name="FK_Categoria_SubCategoria" Association="P3ImageDBModel.FK_Categoria_SubCategoria">
+      <End Role="Categoria" EntitySet="Categorias" />
+      <End Role="SubCategoria" EntitySet="SubCategorias" />
+    </AssociationSet>
+    <EntitySet Name="Campoes" EntityType="P3ImageDBModel.Campo" />
+    <AssociationSet Name="FK_Campo_SubCategoria" Association="P3ImageDBModel.FK_Campo_SubCategoria">
+      <End Role="SubCategoria" EntitySet="SubCategorias" />
+      <End Role="Campo" EntitySet="Campoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Campo_TipoCampo" Association="P3ImageDBModel.FK_Campo_TipoCampo">
+      <End Role="TipoCampo" EntitySet="TipoCampoes" />
+      <End Role="Campo" EntitySet="Campoes" />
+    </AssociationSet>
+    <EntitySet Name="CampoValors" EntityType="P3ImageDBModel.CampoValor" />
+    <AssociationSet Name="FK_CampoValor_Campo" Association="P3ImageDBModel.FK_CampoValor_Campo">
+      <End Role="Campo" EntitySet="Campoes" />
+      <End Role="CampoValor" EntitySet="CampoValors" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__RefactorLog">
+    <Key>
+      <PropertyRef Name="OperationKey" />
+    </Key>
+    <Property Name="OperationKey" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TipoCampo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Campoes" Relationship="P3ImageDBModel.FK_Campo_TipoCampo" FromRole="TipoCampo" ToRole="Campo" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descricao" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SubCategorias" Relationship="P3ImageDBModel.FK_Categoria_SubCategoria" FromRole="Categoria" ToRole="SubCategoria" />
+  </EntityType>
+  <EntityType Name="SubCategoria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descricao" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CategoriaId" />
+    <NavigationProperty Name="Categoria" Relationship="P3ImageDBModel.FK_Categoria_SubCategoria" FromRole="SubCategoria" ToRole="Categoria" />
+    <NavigationProperty Name="Campos" Relationship="P3ImageDBModel.FK_Campo_SubCategoria" FromRole="SubCategoria" ToRole="Campo" />
+  </EntityType>
+  <Association Name="FK_Categoria_SubCategoria">
+    <End Type="P3ImageDBModel.Categoria" Role="Categoria" Multiplicity="0..1" />
+    <End Type="P3ImageDBModel.SubCategoria" Role="SubCategoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubCategoria">
+        <PropertyRef Name="CategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Campo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descricao" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="TipoId" Nullable="false" />
+    <Property Type="Int32" Name="SubCategoriaId" Nullable="false" />
+    <NavigationProperty Name="SubCategoria" Relationship="P3ImageDBModel.FK_Campo_SubCategoria" FromRole="Campo" ToRole="SubCategoria" />
+    <NavigationProperty Name="TipoCampo" Relationship="P3ImageDBModel.FK_Campo_TipoCampo" FromRole="Campo" ToRole="TipoCampo" />
+    <NavigationProperty Name="Valores" Relationship="P3ImageDBModel.FK_CampoValor_Campo" FromRole="Campo" ToRole="CampoValor" />
+  </EntityType>
+  <Association Name="FK_Campo_SubCategoria">
+    <End Type="P3ImageDBModel.SubCategoria" Role="SubCategoria" Multiplicity="1" />
+    <End Type="P3ImageDBModel.Campo" Role="Campo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategoria">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Campo">
+        <PropertyRef Name="SubCategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Campo_TipoCampo">
+    <End Type="P3ImageDBModel.TipoCampo" Role="TipoCampo" Multiplicity="1" />
+    <End Type="P3ImageDBModel.Campo" Role="Campo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCampo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Campo">
+        <PropertyRef Name="TipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CampoValor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CampoId" Nullable="false" />
+    <Property Type="String" Name="Valor" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Campo" Relationship="P3ImageDBModel.FK_CampoValor_Campo" FromRole="CampoValor" ToRole="Campo" />
+  </EntityType>
+  <Association Name="FK_CampoValor_Campo">
+    <End Type="P3ImageDBModel.Campo" Role="Campo" Multiplicity="1" />
+    <End Type="P3ImageDBModel.CampoValor" Role="CampoValor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CampoValor">
+        <PropertyRef Name="CampoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

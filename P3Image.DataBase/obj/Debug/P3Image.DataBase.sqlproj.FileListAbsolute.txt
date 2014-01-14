@@ -1,0 +1,11 @@
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataBase\bin\Debug\P3Image.DataBase.dacpac
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataBase\bin\Debug\P3Image.DataBase.dll
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataBase\bin\Debug\P3Image.DataBase.pdb
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataBase\obj\Debug\P3Image.DataBase.dll
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataBase\obj\Debug\P3Image.DataBase.pdb
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataBase\bin\Debug\P3Image.DataBase.dacpac
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataBase\bin\Debug\Scripts\PostDeploymentScript.sql
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataBase\bin\Debug\P3Image.DataBase.dll
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataBase\bin\Debug\P3Image.DataBase.pdb
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataBase\obj\Debug\P3Image.DataBase.dll
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataBase\obj\Debug\P3Image.DataBase.pdb

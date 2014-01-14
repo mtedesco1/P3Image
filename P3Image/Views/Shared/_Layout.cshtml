@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>P3Image | Demo</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+
+  <link rel="stylesheet" href="~/Content/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="~/Content/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="~/Content/css/font.css" type="text/css" cache="false" />
+
+  <link rel="stylesheet" href="~/Scripts/Layout/js/select2/select2.css" type="text/css" />
+  <link href="~/Scripts/Layout/js/fuelux/fuelux.css" rel="stylesheet" />
+  <link rel="stylesheet" href="~/Scripts/Layout/js/datepicker/datepicker.css" type="text/css" />
+  <link rel="stylesheet" href="~/Scripts/Layout/js/slider/slider.css" type="text/css" />
+
+  <link rel="stylesheet" href="~/Content/css/plugin.css" type="text/css" />
+  <link rel="stylesheet" href="~/Content/css/app.css" type="text/css" />
+ 
+     <!--[if lt IE 9]>
+        <script src="../../Scripts/Layout/js/ie/respond.min.js" cache="false"></script>
+        <script src="../../Scripts/Layout/js/ie/html5.js" cache="false"></script>
+        <script src="../../Scripts/Layout/js/ie/fix.js" cache="false"></script>
+    <![endif]-->
+
+</head>
+<body>
+  <section class="hbox stretch">
+    <!-- .aside -->
+      <aside class="bg-danger aside no-borders nav-vertical" id="nav">
+      <section class="vbox">
+        <header class="nav-bar">
+          <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
+            <i class="icon-reorder"></i>
+          </a>
+          <a href="#" class="nav-brand" data-toggle="fullscreen">P3Image</a>
+          <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
+            <i class="icon-comment-alt"></i>
+          </a>
+        </header>
+        <section>
+          <nav class="nav-primary hidden-xs">
+            <ul class="nav">
+               <li class="dropdown-submenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="icon-file-text"></i>
+                  <span>Categorias</span>
+                </a>
+                <ul class="dropdown-menu">                
+                  <li>
+                    <a href="/Categoria/Create">Gerenciar</a>                    
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="icon-envelope-alt"></i>
+                  <span>Listar Categorias</span>
+                </a>
+              </li>
+              
+            </ul>
+          </nav>
+        </section>
+        <footer class="footer bg-gradient hidden-xs">
+          <a href="modal.lockme.html" data-toggle="ajaxModal" class="btn btn-sm btn-link m-r-n-xs pull-right">
+            <i class="icon-off"></i>
+          </a>
+          <a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm">
+            <i class="icon-reorder"></i>
+          </a>
+        </footer>
+      </section>
+    </aside>
+    <!-- /.aside -->
+    <!-- .vbox -->
+    <section id="content">
+      <section class="vbox">
+        <header class="header bg-black navbar navbar-inverse">
+          <div class="collapse navbar-collapse pull-in">
+            <ul class="nav navbar-nav m-l-n">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
+                    <img src="~/Content/Images/avatar_default.jpg">
+                  </span>
+                  Maximiliano Tedesco <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu animated fadeInLeft">
+                  <li>
+                    <a href="#">Settings</a>
+                  </li>
+                  <li>
+                    <a href="#">Profile</a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="badge bg-danger pull-right">3</span>
+                      Notifications
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">Help</a>
+                  </li>
+                  <li>
+                    <a href="#">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </header>
+            @RenderBody()
+      </section>
+      <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+    </section>
+    <!-- /.vbox -->
+  </section>
+	<script src="~/Scripts/Layout/js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="~/Scripts/Layout/js/bootstrap.js"></script>
+  <!-- Sparkline Chart -->
+  <script src="~/Scripts/Layout/js/charts/sparkline/jquery.sparkline.min.js"></script>
+  <!-- App -->
+  <script src="~/Scripts/Layout/js/app.js"></script>
+  <script src="~/Scripts/Layout/js/app.plugin.js"></script>
+  <script src="~/Scripts/Layout/js/app.data.js"></script>
+  <script src="~/Scripts/Layout/js/libs/jquery.pjax.js" cache="false"></script>
+  <!-- Easy Pie Chart -->
+  <script src="~/Scripts/Layout/js/charts/easypiechart/jquery.easy-pie-chart.js"></script>
+  <!-- Morris -->
+  <script src="~/Scripts/Layout/js/charts/morris/raphael-min.js" cache="false"></script>
+  <script src="~/Scripts/Layout/js/charts/morris/morris.min.js" cache="false"></script>
+
+
+
+  <script src="~/Scripts/Libraries/jquery-ui-1.8.20.min.js"></script>
+    <!-- fuelux -->
+  <script src="~/Scripts/Layout/js/fuelux/fuelux.js"></script>
+  <!-- datepicker -->
+  <script src="~/Scripts/Layout/js/datepicker/bootstrap-datepicker.js"></script>
+  <!-- slider -->
+  <script src="~/Scripts/Layout/js/slider/bootstrap-slider.js"></script>
+  <!-- file input -->  
+  <script src="~/Scripts/Layout/js/file-input/bootstrap.file-input.js"></script>
+  <!-- combodate -->
+  <script src="~/Scripts/Layout/js/libs/moment.min.js"></script>
+  <script src="~/Scripts/Layout/js/combodate/combodate.js" cache="false"></script>
+  <!-- parsley -->
+  <script src="~/Scripts/Layout/js/parsley/parsley.min.js" cache="false"></script>
+  <script src="~/Scripts/Layout/js/parsley/parsley.extend.js" cache="false"></script>
+  <!-- select2 -->
+  <script src="~/Scripts/Layout/js/select2/select2.min.js" cache="false"></script>
+  <!-- wysiwyg -->
+  <script src="~/Scripts/Layout/js/wysiwyg/jquery.hotkeys.js" cache="false"></script>
+  <script src="~/Scripts/Layout/js/wysiwyg/bootstrap-wysiwyg.js" cache="false"></script>
+  <script src="~/Scripts/Layout/js/wysiwyg/demo.js" cache="false"></script>
+  <!-- validations -->
+  <script src="~/Scripts/Libraries/jquery.validate.min.js"></script>
+  <script src="~/Scripts/Libraries/jquery.validate.unobtrusive.min.js"></script>
+  <!-- knockout -->
+  <script src="~/Scripts/Libraries/knockout-2.1.0.js"></script>
+  <script src="~/Scripts/Libraries/knockout.mapping-latest.js"></script>
+
+</body>
+</html>

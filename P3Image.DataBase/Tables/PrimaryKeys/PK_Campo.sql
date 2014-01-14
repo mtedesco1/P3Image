@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Campo]
+	ADD CONSTRAINT [PK_Campo]
+	PRIMARY KEY (Id)

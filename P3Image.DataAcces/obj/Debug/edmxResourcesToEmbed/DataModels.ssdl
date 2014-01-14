@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="P3ImageDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="P3ImageDBModelStoreContainer">
+    <EntitySet Name="__RefactorLog" EntityType="P3ImageDBModel.Store.__RefactorLog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Campo" EntityType="P3ImageDBModel.Store.Campo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CampoValor" EntityType="P3ImageDBModel.Store.CampoValor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categoria" EntityType="P3ImageDBModel.Store.Categoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubCategoria" EntityType="P3ImageDBModel.Store.SubCategoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="P3ImageDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoCampo" EntityType="P3ImageDBModel.Store.TipoCampo" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Campo_SubCategoria" Association="P3ImageDBModel.Store.FK_Campo_SubCategoria">
+      <End Role="SubCategoria" EntitySet="SubCategoria" />
+      <End Role="Campo" EntitySet="Campo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Campo_TipoCampo" Association="P3ImageDBModel.Store.FK_Campo_TipoCampo">
+      <End Role="TipoCampo" EntitySet="TipoCampo" />
+      <End Role="Campo" EntitySet="Campo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CampoValor_Campo" Association="P3ImageDBModel.Store.FK_CampoValor_Campo">
+      <End Role="Campo" EntitySet="Campo" />
+      <End Role="CampoValor" EntitySet="CampoValor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Categoria_SubCategoria" Association="P3ImageDBModel.Store.FK_Categoria_SubCategoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="SubCategoria" EntitySet="SubCategoria" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="__RefactorLog">
+    <Key>
+      <PropertyRef Name="OperationKey" />
+    </Key>
+    <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Campo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+    <Property Name="TipoId" Type="int" Nullable="false" />
+    <Property Name="SubCategoriaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CampoValor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CampoId" Type="int" Nullable="false" />
+    <Property Name="Valor" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SubCategoria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+    <Property Name="CategoriaId" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TipoCampo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Campo_SubCategoria">
+    <End Role="SubCategoria" Type="P3ImageDBModel.Store.SubCategoria" Multiplicity="1" />
+    <End Role="Campo" Type="P3ImageDBModel.Store.Campo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategoria">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Campo">
+        <PropertyRef Name="SubCategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Campo_TipoCampo">
+    <End Role="TipoCampo" Type="P3ImageDBModel.Store.TipoCampo" Multiplicity="1" />
+    <End Role="Campo" Type="P3ImageDBModel.Store.Campo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoCampo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Campo">
+        <PropertyRef Name="TipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CampoValor_Campo">
+    <End Role="Campo" Type="P3ImageDBModel.Store.Campo" Multiplicity="1" />
+    <End Role="CampoValor" Type="P3ImageDBModel.Store.CampoValor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CampoValor">
+        <PropertyRef Name="CampoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Categoria_SubCategoria">
+    <End Role="Categoria" Type="P3ImageDBModel.Store.Categoria" Multiplicity="0..1" />
+    <End Role="SubCategoria" Type="P3ImageDBModel.Store.SubCategoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubCategoria">
+        <PropertyRef Name="CategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartupScript>Scripts\PostDeploymentScript.sql</StartupScript>
+    <StartAction>StartScript</StartAction>
+    <TargetConnectionString>Data Source=.\SQLEXPRESS;Initial Catalog=P3ImageDB;Integrated Security=True;Pooling=False</TargetConnectionString>
+    <TargetDatabase>P3ImageDB</TargetDatabase>
+    <StartupScriptList>Scripts\PostDeploymentScript.sql</StartupScriptList>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,190 @@
+﻿@model P3Image.Presentation.Models.CategoriaModel
+@using P3Image.Presentation.Helpers
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="../Scripts/Layout/js/jquery.min.js"></script>
+<script src="../Scripts/Modules/Categoria.js"></script>
+<script>var _categoriaModel = @Html.Raw(Model.ToJson());</script>
+
+<section id="content">
+    <section class="vbox">
+        <header class="header bg-dark bg-gradient">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#basic" data-toggle="tab">Categorias</a></li>
+            </ul>
+        </header>
+        <section class="scrollable wrapper">
+            <div class="tab-content">
+                <section class="tab-pane active">
+                    <section class="panel">
+                        <header class="panel-heading font-bold">
+                            Categorias
+                        </header>
+                        <div class="panel-body">
+                            <form class="form-horizontal" method="get">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Categorias</label>
+                                    <div class="col-sm-10">
+                                        <div class="btn-group m-r">
+                                            <select id="ddlCategoria" data-bind="optionsText: 'Descricao', optionsValue: 'Id', options: Categorias,
+                                                value: CategoriaSelected, event:{ change: changeCategoria }" class="form-control m-b">
+                                            </select>
+                                        </div>
+                                        <button type="button" class="btn btn-primary" onclick="$('#popUpNovaCategoria').show();">Nova Categoria</button>
+                                        <button type="button" class="btn btn-primary" data-bind="click: novaSubCategoria">Adicionar SubCategoria</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </section>
+
+                <section class="tab-pane active" data-bind="foreach: SubCategorias">
+                    <section class="panel">
+                        <header class="panel-heading font-bold">
+                            Sub Categoria: <span data-bind="text: Descricao"></span>
+                        </header>
+                        <div class="panel-body">
+                            <form class="form-horizontal" method="get">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Nome Sub Categoria</label>
+                                    <div class="col-sm-10">
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" placeholder="Nome da Sub Categoria" data-bind="value: Descricao">
+                                        </div>
+                                        <button type="button" class="btn btn-primary" data-bind="click: $parent.openPopUp">Adicionar Campo</button>
+                                    </div>
+                                </div>
+                            </form>
+
+
+
+
+
+                            <div class="popUpNovoCampo" style="display: none;">
+                            <div class="modal in" id="ajaxModal" aria-hidden="false" style="display: block;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" onclick="$('#popUpNovoCampo').hide()">×</button>
+                                            <h4 class="modal-title">Novo Campo</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <section class="panel">
+                                                <div class="panel-body">
+                                                    <form role="form">
+                                                        <input type="hidden" data-bind="value: Id"/>
+                                                        <div class="form-group">
+                                                            <label>Selecione o Tipo do Campo</label>
+                                                            <select class="form-control m-b tipoCampo" data-bind="value: $parent.TipoCampo, event:{ change: $parent.changeTipoCampo }">
+                                                                <option value="1">TexBox</option>
+                                                                <option value="2">CheckBox</option>
+                                                                <option value="3">Combox</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group" style="display:none;">
+                                                            <label>Itens do Campo</label>
+                                                           <div class="col-sm-10">
+                                                            <div id="ListValues" class="pillbox clearfix">
+                                                              <ul>
+                                                                  <input type="text" placeholder="Adicione Outro Item">
+                                                              </ul>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Nome do Campo</label>
+                                                            <input class="form-control" placeholder="Insere o Nome do Campo" data-bind="value: $parent.NovoCampo">
+                                                        </div>
+                                                        <button type="submit" class="btn btn-sm btn-danger" data-dismiss="modal" data-bind="click: $parent.novoCampo">Finalizar</button>
+                                                    </form>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                            <div class="line line-dashed line-lg pull-in"></div>
+
+                            <form  class="form-horizontal" method="get" data-bind="foreach: Campos">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-10">
+                                        <div class="col-md-4">
+                                            <!-- ko if: TipoId() == 1 -->
+                                                <input type="text" class="form-control" placeholder="Descricao do campo" data-bind="value: Descricao">
+                                            <!-- /ko -->
+                                            <!-- ko if: TipoId() == 2 -->
+                                                <div class="checkbox">
+                                                  <label>
+                                                    <input type="checkbox" value="">
+                                                    <span data-bind="text: Descricao"></span>
+                                                  </label>
+                                                </div>
+                                            <!-- /ko -->
+                                            <!-- ko if: TipoId() == 3 -->
+                                                <select class="form-control m-b" data-bind="foreach: Valores">
+                                                    <option value="1" data-bind="text: Valor"></option>
+                                                </select>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <section class="tab-pane active">
+                                <section class="panel">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <div class="col-sm-4 col-sm-offset-2">
+                                                <button type="button" class="btn btn-primary" data-bind="click: $parent.updateNomeSubCategoria">Salvar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </section>
+
+                        </div>
+                    </section>
+                </section>
+            </div>
+
+        </section>
+    </section>
+</section>
+
+
+<div id="popUpNovaCategoria" style="display: none;">
+    <div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="$('#popUpNovaCategoria').hide()">×</button>
+                    <h4 class="modal-title">Nova Categoria</h4>
+                </div>
+                <div class="modal-body">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>Nome da Categoria</label>
+                                    <input class="form-control" placeholder="Insere o Nome da Categoria" data-bind="value: NovaCategoria">
+                                </div>
+                                <button type="submit" class="btn btn-sm btn-danger" data-dismiss="modal" data-bind="click: novaCategoria">Finalizar</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

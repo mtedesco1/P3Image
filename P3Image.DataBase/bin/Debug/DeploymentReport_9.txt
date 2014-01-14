@@ -1,0 +1,72 @@
+﻿** Warnings
+     Procedure: [dbo].[GetDirectDemos] has an unresolved reference to object [dbo].[BadTable1].
+     Procedure: [dbo].[GetDirectDemos] has an unresolved reference to object [dbo].[BadTable2].
+     Procedure: [dbo].[GetDirectDemos] contains an unresolved reference to an object. Either the object does not exist or the
+       reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT1]::[Id],
+       [dbo].[BadTable1].[Id] or [dbo].[BadTable2].[BT1]::[Id].
+     Procedure: [dbo].[GetDirectDemos] contains an unresolved reference to an object. Either the object does not exist or the
+       reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT2]::[Id],
+       [dbo].[BadTable2].[BT2]::[Id] or [dbo].[BadTable2].[Id].
+     Procedure: [dbo].[GetDirectDemos] contains an unresolved reference to an object. Either the object does not exist or the
+       reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT1]::[Value1],
+       [dbo].[BadTable1].[Value1] or [dbo].[BadTable2].[BT1]::[Value1].
+     Procedure: [dbo].[GetDirectDemos] contains an unresolved reference to an object. Either the object does not exist or the
+       reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT1]::[Value2],
+       [dbo].[BadTable1].[Value2] or [dbo].[BadTable2].[BT1]::[Value2].
+     Procedure: [dbo].[GetDirectDemos] contains an unresolved reference to an object. Either the object does not exist or the
+       reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT1]::[Value3],
+       [dbo].[BadTable1].[Value3] or [dbo].[BadTable2].[BT1]::[Value3].
+     Procedure: [dbo].[GetDirectDemos] contains an unresolved reference to an object. Either the object does not exist or the
+       reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT2]::[Value1],
+       [dbo].[BadTable2].[BT2]::[Value1] or [dbo].[BadTable2].[Value1].
+     Procedure: [dbo].[GetDirectDemos] contains an unresolved reference to an object. Either the object does not exist or the
+       reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT2]::[Value2],
+       [dbo].[BadTable2].[BT2]::[Value2] or [dbo].[BadTable2].[Value2].
+     Procedure: [dbo].[GetDirectDemos] contains an unresolved reference to an object. Either the object does not exist or the
+       reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT2]::[Value3],
+       [dbo].[BadTable2].[BT2]::[Value3] or [dbo].[BadTable2].[Value3].
+     Procedure: [dbo].[GetDirectDemoById] has an unresolved reference to object [dbo].[BadTable1].
+     Procedure: [dbo].[GetDirectDemoById] has an unresolved reference to object [dbo].[BadTable2].
+     Procedure: [dbo].[GetDirectDemoById] contains an unresolved reference to an object. Either the object does not exist or
+       the reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT1]::[Id],
+       [dbo].[BadTable1].[Id] or [dbo].[BadTable2].[BT1]::[Id].
+     Procedure: [dbo].[GetDirectDemoById] contains an unresolved reference to an object. Either the object does not exist or
+       the reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT1]::[Id],
+       [dbo].[BadTable1].[Id] or [dbo].[BadTable2].[BT1]::[Id].
+     Procedure: [dbo].[GetDirectDemoById] contains an unresolved reference to an object. Either the object does not exist or
+       the reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT2]::[Id],
+       [dbo].[BadTable2].[BT2]::[Id] or [dbo].[BadTable2].[Id].
+     Procedure: [dbo].[GetDirectDemoById] contains an unresolved reference to an object. Either the object does not exist or
+       the reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT1]::[Value1],
+       [dbo].[BadTable1].[Value1] or [dbo].[BadTable2].[BT1]::[Value1].
+     Procedure: [dbo].[GetDirectDemoById] contains an unresolved reference to an object. Either the object does not exist or
+       the reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT1]::[Value2],
+       [dbo].[BadTable1].[Value2] or [dbo].[BadTable2].[BT1]::[Value2].
+     Procedure: [dbo].[GetDirectDemoById] contains an unresolved reference to an object. Either the object does not exist or
+       the reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT1]::[Value3],
+       [dbo].[BadTable1].[Value3] or [dbo].[BadTable2].[BT1]::[Value3].
+     Procedure: [dbo].[GetDirectDemoById] contains an unresolved reference to an object. Either the object does not exist or
+       the reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT2]::[Value1],
+       [dbo].[BadTable2].[BT2]::[Value1] or [dbo].[BadTable2].[Value1].
+     Procedure: [dbo].[GetDirectDemoById] contains an unresolved reference to an object. Either the object does not exist or
+       the reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT2]::[Value2],
+       [dbo].[BadTable2].[BT2]::[Value2] or [dbo].[BadTable2].[Value2].
+     Procedure: [dbo].[GetDirectDemoById] contains an unresolved reference to an object. Either the object does not exist or
+       the reference is ambiguous because it could refer to any of the following objects: [dbo].[BadTable1].[BT2]::[Value3],
+       [dbo].[BadTable2].[BT2]::[Value3] or [dbo].[BadTable2].[Value3].
+
+** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Alter
+       [dbo].[CampoValor] (Table)
+
+** Supporting actions

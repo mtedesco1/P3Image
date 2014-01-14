@@ -1,0 +1,15 @@
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataAcces\bin\Debug\P3Image.DataAcces.dll.config
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataAcces\bin\Debug\P3Image.DataAcces.dll
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataAcces\bin\Debug\P3Image.DataAcces.pdb
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataAcces\bin\Debug\EntityFramework.dll
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataAcces\bin\Debug\EntityFramework.xml
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataAcces\obj\Debug\P3Image.DataAcces.dll
+C:\Users\Alpiste\Documents\Visual Studio 2012\Projects\P3Image\P3Image.DataAcces\obj\Debug\P3Image.DataAcces.pdb
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataAcces\bin\Debug\P3Image.DataAcces.dll.config
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataAcces\bin\Debug\P3Image.DataAcces.dll
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataAcces\bin\Debug\P3Image.DataAcces.pdb
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataAcces\bin\Debug\EntityFramework.dll
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataAcces\bin\Debug\EntityFramework.xml
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataAcces\obj\Debug\P3Image.DataAcces.dll
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataAcces\obj\Debug\P3Image.DataAcces.pdb
+C:\Users\Alpiste\Desktop\P3Image\P3Image.DataAcces\obj\Debug\P3Image.DataAcces.csprojResolveAssemblyReference.cache
